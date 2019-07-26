@@ -1,1 +1,26 @@
 Goodnlght
+将本地的文件上传到GitHub上的步骤：
+    1、建库
+    2、没有Git的需要安装Git（点击https://git-scm.com/downloads下载Git）
+    3、本地仓库上传到GitHub仓库
+      3.1、在自己本地的一个盘下自己新建一个文件（mytest.txt），将mytest.txt上传至github中
+      3.2、文件保存至本地仓库，鼠标点击选择 Git Bash Here
+      3.3、配置用户名和邮箱
+           git config --global user.name "用户名"
+           git config --global user.email "邮箱"
+      3.4、添加和提交
+           git init （先初始化，建立 .git）
+           git add mytest.txt （添加mytest.txt文件）
+           git commit -m "just a test"(提交成功)
+      3.5、生产SSH密钥
+           $ ssh-keygen -t rsa -C "2536371706@qq.com",连续按3个回车即可
+           在C:\Users\Administrator\.ssh目录下找到id_rsa.pub复制里面所有的内容
+      3.6、登录自己的github账号，点击 Your profile，然后点击Edit profile，
+          选择SSH and GPG keys并新建一个SSH Key，其中Title中的名称可以任意填写，将
+          C:\Users\Administrator\.ssh目录下找到id_rsa.pub复制里面所有的内容到Key中，
+          点击Add SSH Key，SSH密钥完成
+      3.7、远程提交
+           添加新的远程仓库
+           $ git remote add origin https://github.com/Goodnlght/XYF.git
+           其中origin后面的部分是github中的SSH
+           远程提交：git push origin master
